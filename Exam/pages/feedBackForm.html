@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+<nav>
+    <a href="./index.html">Главная</a>
+    <a href="./tasks.html">Задачи</a>
+    <a href="./registrationForm.html">Форма регистрации</a>
+    <a href="./feedBackForm.html" class="selected">Форма обратной связи</a>
+    <a href="./test.html">Тест</a>
+    <a href="./animation.html">Анимация</a>
+    <a href="./model.html">Модель</a>
+    <a href="videoLessons.html">Видеоуроки</a>
+    <a href="./books.html">Книги</a>
+    <a href="./aboutAuthor.html">Об авторе</a>
+</nav>
+<div class="container">
+
+<form action="" method="post">
+    <input type="email" placeholder="Введите email аккаунта">
+    <button onclick="changeEmail()">Отправка сообщения</button>
+</form>
+
+</div>
+
+<script>
+    const form = document.forms[0];
+
+    function changeEmail() {
+        const value = form.elements[0].value;
+        form.action = "mailto:" + value;
+        alert("Логин пользователя был изменен!")
+    }
+</script>
+</body>
+</html>

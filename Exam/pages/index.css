@@ -1,0 +1,204 @@
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    user-select: none;
+}
+a, button {
+    cursor: revert;
+}
+ol, ul, menu {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+input, textarea {
+    -webkit-user-select: auto;
+}
+textarea {
+    white-space: revert;
+}
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+:where(pre) {
+    all: revert;
+}
+::placeholder {
+    color: unset;
+}
+::marker {
+    content: initial;
+}
+:where([hidden]) {
+    display: none;
+}
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+:where(dialog:modal) {
+    all: revert;
+}
+
+body {
+    position: relative;
+    background-image: url("./assets/wall.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+.table {
+    position: absolute;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+    background-image: url("./assets/table.jpg");
+    background-size: cover;
+}
+
+.c {
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    bottom: 200px;
+    cursor: pointer;
+    left: 1000px;
+}
+.c_body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.c_body::before {
+    content: "";
+    position: absolute;
+    bottom: 150px;
+    left: 150px;
+    transform: translate(-50%);
+    background: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.c_gorlo {
+    height: 300px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+}
+.c_gorlo_zhizha {
+    width: 100%;
+    height: 150px;
+}
+.c_circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .1);
+    position: absolute;
+    bottom: 0;
+}
+
+.picture {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 200px;
+}
+.picture_block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.picture_block img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mirror_picture {
+    height: 100vh;
+    width: 500px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+.mirror_picture > img {
+    transform: rotate(-180deg);
+    position: absolute;
+    right: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    z-index: 1000;
+}
+.modal table {
+    margin-bottom: 10px;
+    background: white;
+}
+.modal tr {}
+.modal tr th {
+    padding: 5px 15px;
+    border: 1px solid #000000;
+}
+.modal tr th span {
+    font-weight: bold;
+}
+.modal input {
+    width: 100px;
+    color: royalblue;
+}
+
+.modal button{
+    padding: 10px 20px;
+    background: teal;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.modal button:hover {
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+
+.changeLiquid {
+    margin-bottom: 10px;
+}
+
+#ruler {
+    position: absolute;
+    top: 100px;
+    left: 800px;
+    width: 327px;
+    height: 50px;
+    z-index: 500;
+    transition: all .3s ease;
+}

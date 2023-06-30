@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+<nav>
+    <a href="./index.html">Главная</a>
+    <a href="./tasks.html">Задачи</a>
+    <a href="./registrationForm.html" class="selected">Форма регистрации</a>
+    <a href="./feedBackForm.html">Форма обратной связи</a>
+    <a href="./test.html">Тест</a>
+    <a href="./animation.html">Анимация</a>
+    <a href="./model.html">Модель</a>
+    <a href="videoLessons.html">Видеоуроки</a>
+    <a href="./books.html">Книги</a>
+    <a href="./aboutAuthor.html">Об авторе</a>
+</nav>
+<div class="container">
+
+<form action="#" onsubmit="return false">
+    <label>
+        Логин
+        <input id="login" type="text" placeholder="Логин">
+        <span class="error">Длина пароля должна быть больше или ровна 8 символам</span>
+    </label>
+    <label>
+        Пароль
+        <input id="password" type="password" placeholder="Пароль">
+        <span class="error">Длина пароля должна быть больше или ровна 8 символам</span>
+    </label>
+    <button onclick="createAccount()">Создать аккаунт</button>
+</form>
+
+<form action="#" onsubmit="return false">
+    <label>
+        Логин
+        <input id="loginEnter" type="text" placeholder="Логин">
+        <span class="error">Длина логина должна быть больше или ровна 8 символам</span>
+    </label>
+    <label>
+        Пароль
+        <input id="passwordEnter" type="password" placeholder="Пароль">
+        <span class="error">Длина пароля должна быть больше или ровна 8 символам</span>
+    </label>
+    <button onclick="loginToAccount()">Войти в аккаунт</button>
+</form>
+
+</div>
+<script>
+    const login = document.getElementById("login");
+    const password = document.getElementById("password");
+
+    const loginEnter = document.getElementById("loginEnter");
+    const passwordEnter = document.getElementById("passwordEnter");
+
+    function createAccount() {
+        const login = document.getElementById("login").value;
+        const password = document.getElementById("password").value;
+
+        let isError = false;
+
+        if (login.length < 8) {
+            setVisibleError(0, 0);
+            isError = true;
+        } else {
+            resetVisibleError(0, 0);
+            isError = false;
+        }
+
+        if (password.length < 8) {
+            setVisibleError(0, 1);
+            isError = true;
+        } else {
+            resetVisibleError(0, 1);
+            isError = false;
+        }
+
+        if (!isError) {
+            localStorage.setItem("account", JSON.stringify({
+                login,
+                password
+            }))
+
+            alert("Аккаунт создан")
+        } else {
+            alert("Одно из полей не заполнено")
+        }
+    }
+
+    function loginToAccount() {
+        const login = document.getElementById("loginEnter").value;
+        const password = document.getElementById("passwordEnter").value;
+
+        const account = JSON.parse(localStorage.getItem("account"));
+
+        let isError = false;
+
+        if (login.length < 8) {
+            setVisibleError(1, 0);
+            isError = true;
+        } else {
+            resetVisibleError(1, 0);
+            isError = false;
+        }
+
+        if (password.length < 8) {
+            setVisibleError(1, 1);
+            isError = true;
+        } else {
+            resetVisibleError(1, 1);
+            isError = false;
+        }
+
+        if (!isError && account.login === login && account.password === password) {
+            alert("Вы  успешно авторизованы");
+        } else {
+            alert("Неправильно указаны данные");
+        }
+    }
+
+    function setVisibleError(formId, id) {
+        document.forms[formId].elements[id].parentElement.getElementsByClassName("error")[0].classList.add("visible");
+    }
+    function resetVisibleError(formId, id) {
+        document.forms[formId].elements[id].parentElement.getElementsByClassName("error")[0].classList.remove("visible");
+    }
+</script>
+</body>
+</html>

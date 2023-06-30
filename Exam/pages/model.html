@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Модель</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+<nav>
+    <a href="./index.html">Главная</a>
+    <a href="./tasks.html">Задачи</a>
+    <a href="./registrationForm.html">Форма регистрации</a>
+    <a href="./feedBackForm.html">Форма обратной связи</a>
+    <a href="./test.html">Тест</a>
+    <a href="./animation.html">Анимация</a>
+    <a href="./model.html" class="selected">Модель</a>
+    <a href="videoLessons.html">Видеоуроки</a>
+    <a href="./books.html">Книги</a>
+    <a href="./aboutAuthor.html">Об авторе</a>
+</nav>
+<form action="#" class="modal">
+    <table>
+        <tr>
+            <th><span>Вещество</span></th>
+            <th><span>F, см</span></th>
+            <th><span>l, см</span></th>
+            <th><span>R, см</span></th>
+            <th><span>n</span></th>
+            <th><span>v, м/c</span></th>
+        </tr>
+        <tr>
+            <th><span>Вода</span></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+        </tr>
+        <tr>
+            <th><span>Глицерин</span></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+            <th><input type="text"></th>
+        </tr>
+    </table>
+    <div class="changeLiquid">
+        <button onclick="changeToWater()">Вода</button>
+        <button onclick="changeToGlycerol()">Глицерин</button>
+    </div>
+    <button onclick="animation()">Анимация</button>
+</form>
+
+<div class="c">
+    <div class="c_body">
+        <div class="c_gorlo">
+            <div class="c_gorlo_zhizha"></div>
+        </div>
+        <div class="c_circle"></div>
+    </div>
+</div>
+
+<div class="mirror_picture">
+    <img src="assets/image.png">
+</div>
+<div class="picture">
+    <div class="picture_block">
+        <img src="assets/image.png">
+    </div>
+</div>
+<img id='ruler' src='./assets/ruler.png' class="draggable">
+<div class="table"></div>
+
+<script src="elements.js"></script>
+<script src="physicCalc.js"></script>
+<script src="animation.js"></script>
+<script src="changeLiquids.js"></script>
+<script src="moveItems.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

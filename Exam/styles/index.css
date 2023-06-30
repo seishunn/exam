@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container input, button {
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav {
+    padding: 20px;
+    background: rgba(65, 105, 225, .5);
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: royalblue;
+    transition: all .5s ease;
+}
+nav a:hover {
+    transform: scale(1.1);
+    background: orange;
+    transition: all .5s ease;
+}
+nav .selected {
+    background: orange;
+}
+
+.container input[type=text],
+.container input[type=password],
+.container input[type=email] {
+    background: rgba(0, 0, 0, .05);
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.container button {
+    background: royalblue;
+    cursor: pointer;
+    padding: 8px 10px;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.error {
+    display: none;
+    color: red;
+    font-weight: bold;
+}
+.visible {
+    display: block;
+}
+
+.container form {
+    margin: 20px 0;
+    background: rgba(0, 0, 0, .03);
+    padding: 10px;
+}
+.container form > * {
+    display: block;
+}
+
+.container label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.container label input[type=text],
+.container label input[type=password],
+.container label input[type=email] {
+    margin-top: 5px;
+}
+
+.container input[type=text],
+.container input[type=password],
+.container input[type=email] {
+    margin-bottom: 5px;
+}
+
+.test label {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.test label input {
+    margin-right: 10px;
+}
+
+.container > a {
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px 20px;
+    background: aquamarine;
+    border-radius: 8px;
+    color: royalblue;
+}

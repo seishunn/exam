@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+<nav>
+    <a href="./index.html">Главная</a>
+    <a href="./tasks.html" class="selected">Задачи</a>
+    <a href="./registrationForm.html">Форма регистрации</a>
+    <a href="./feedBackForm.html">Форма обратной связи</a>
+    <a href="./test.html">Тест</a>
+    <a href="./animation.html">Анимация</a>
+    <a href="./model.html">Модель</a>
+    <a href="videoLessons.html">Видеоуроки</a>
+    <a href="./books.html">Книги</a>
+    <a href="./aboutAuthor.html">Об авторе</a>
+</nav>
+<div class="container">
+
+<form action="#" onsubmit="return false">
+    <div id="result"></div>
+    <button onclick="getResult()">Проверить результат</button>
+</form>
+</div>
+<script>
+    const answers = [];
+
+    function createQuestion(questionText, answerText = "") {
+        const label = document.createElement("label");
+        const span = document.createElement("span");
+        const input = document.createElement("input");
+
+        span.innerHTML = questionText;
+        input.placeholder = "Ответ";
+        input.type = "text";
+
+        answers.push(answerText);
+
+        label.append(span, input);
+        document.forms[0].appendChild(label);
+    }
+
+    function getResult() {
+        let resultScore = 0;
+        const questions = [...document.forms[0].elements];
+        const answers = ['h1', 'color', '/*', '==', 'src', '*', 'push()', 'ul', '&&', 'margin', 'pop()', 'table', '.', 'innerHTML', 'form'];
+
+        questions.slice(1).forEach((item, index) => {
+            if (item.value.toLowerCase() === answers[index].toLowerCase()) {
+                resultScore++;
+            }
+        })
+
+        document.getElementById("result").innerHTML = `Вы правильно ответили на ${resultScore} вопросов.`
+    }
+
+    createQuestion("1.Какой тег используется для создания заголовка первого уровня в HTML?", "h1");
+    createQuestion("2.Какой CSS свойство используется для изменения цвета текста?", "color");
+    createQuestion("3.Какой CSS свойство используется для изменения цвета текста?", "/*");
+    createQuestion("4.Какой оператор используется для сравнения значений по равенству в JavaScript?", "==");
+    createQuestion("5.Какой атрибут используется для задания внешней ссылки на изображение в HTML?", "src");
+    </script>
+</body>
+</html>
